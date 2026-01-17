@@ -1,0 +1,23 @@
+<section class="faq">
+  <div class="container" appScrollAnimation>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <p class="section-subtitle">Everything you need to know</p>
+
+    <div class="faq-list">
+      <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faq.isOpen">
+        <div class="faq-question" (click)="toggleFaq(i)">
+          <div class="question-content">
+            <span class="faq-icon">Q:</span>
+            <h3>{{ faq.question }}</h3>
+          </div>
+          <span class="toggle-icon">{{ faq.isOpen ? '−' : '+' }}</span>
+        </div>
+        <div class="faq-answer" *ngIf="faq.isOpen">
+          <span class="faq-icon">A:</span>
+          <p>{{ faq.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

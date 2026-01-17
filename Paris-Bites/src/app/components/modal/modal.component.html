@@ -1,0 +1,45 @@
+<!-- Modal Overlay -->
+<div class="modal-overlay" *ngIf="isOpen" (click)="handleOverlayClick($event)">
+  <div class="modal-container">
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h2 class="modal-title">{{ config.title }}</h2>
+      <button class="modal-close" (click)="handleCancel()" aria-label="Close">
+        ✕
+      </button>
+    </div>
+
+    <!-- Modal Body -->
+    <div class="modal-body">
+      <!-- Message (for both types) -->
+      <p class="modal-message" *ngIf="config.message">{{ config.message }}</p>
+
+      <!-- Input Field (for input type) -->
+      <div class="modal-input-wrapper" *ngIf="config.type === 'input'">
+        <input
+          type="text"
+          class="modal-input"
+          [(ngModel)]="inputValue"
+          [placeholder]="config.inputPlaceholder || 'Enter value...'"
+          (keyup.enter)="handleConfirm()"
+          autofocus
+        />
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button class="modal-btn modal-btn-cancel" (click)="handleCancel()">
+        {{ config.cancelText || 'Cancel' }}
+      </button>
+      <button 
+        class="modal-btn modal-btn-confirm" 
+        (click)="handleConfirm()"
+        [disabled]="config.type === 'input' && !inputValue.trim()"
+      >
+        {{ config.confirmText || 'Confirm' }}
+      </button>
+    </div>
+  </div>
+</div>
+

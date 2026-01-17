@@ -1,0 +1,41 @@
+<section class="how-it-works">
+  <div class="container" appScrollAnimation>
+    <h2 class="section-title">How to Order</h2>
+    <p class="section-subtitle">
+      Simple, fast, and hassle-free ordering in just 5 steps
+    </p>
+
+    <div class="steps-container">
+      <div class="step-card" *ngFor="let step of steps; let i = index">
+        <!-- Step Number Badge -->
+        <div class="step-number">{{ step.number }}</div>
+        
+        <!-- Step Icon -->
+        <div class="step-icon">{{ step.icon }}</div>
+        
+        <!-- Step Content -->
+        <div class="step-content">
+          <h3 class="step-title">{{ step.title }}</h3>
+          <p class="step-description">{{ step.description }}</p>
+        </div>
+
+        <!-- Connector Arrow (not for last item) -->
+        <div class="step-arrow" *ngIf="i < steps.length - 1">
+          <span class="arrow-icon">→</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="cta-box">
+      <p class="cta-text">
+        <span class="cta-icon">⚡</span>
+        <strong>Order in under 10 seconds!</strong> No login, no payment upfront.
+      </p>
+      <p class="cta-subtext">
+        📲 Order confirmation via WhatsApp • 💬 We'll reply within minutes
+      </p>
+    </div>
+  </div>
+</section>
+

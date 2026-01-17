@@ -1,0 +1,50 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3 class="footer-logo">Paris Bites</h3>
+        <p class="footer-tagline">Chocolaterie & Desserts</p>
+        <p class="footer-description">
+          Handcrafted desserts made fresh, every day.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h4 class="footer-title">Get in Touch</h4>
+        <div class="contact-buttons">
+          <button class="contact-btn whatsapp-btn" (click)="openWhatsApp()">
+            <span class="btn-icon">💬</span>
+            <span class="btn-text">WhatsApp</span>
+          </button>
+          <button class="contact-btn instagram-btn" (click)="openInstagram()">
+            <span class="btn-icon">📷</span>
+            <span class="btn-text">Instagram</span>
+          </button>
+        </div>
+        <p class="instagram-cta">Follow us for daily dessert updates</p>
+      </div>
+
+      <div class="footer-hours">
+        <h4 class="footer-title">Opening Hours</h4>
+        <p class="hours-text">Open from 5 PM onwards</p>
+        <p class="hours-subtext">Every day of the week</p>
+      </div>
+    </div>
+
+    <div class="footer-trust-line">
+      <p class="trust-badges">
+        FSSAI compliant • Hygienically prepared • Made fresh daily
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; {{ currentYear }} Paris Bites – Chocolaterie & Desserts
+      </p>
+      <p class="made-with">
+        Crafted with <span class="heart">❤️</span> in Pune
+      </p>
+    </div>
+  </div>
+</footer>
+

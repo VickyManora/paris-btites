@@ -1,0 +1,21 @@
+<section id="gallery" class="gallery">
+  <div class="container" appScrollAnimation>
+    <h2 class="section-title">From Our Cart</h2>
+    <p class="section-subtitle">
+      Real moments, real desserts, real happiness
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let item of galleryImages; let i = index">
+        <img [src]="item.image" [alt]="item.caption" loading="lazy">
+        <div class="authenticity-label" *ngIf="item.label">
+          {{ item.label }}
+        </div>
+        <div class="gallery-overlay">
+          <p class="gallery-caption">{{ item.caption }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

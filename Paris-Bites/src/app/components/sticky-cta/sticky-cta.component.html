@@ -1,0 +1,8 @@
+<!-- Hide sticky CTA when cart has items (order summary bar will show instead) -->
+<div class="sticky-cta" *ngIf="!hasCartItems">
+  <button class="sticky-cta-button" (click)="openWhatsApp()">
+    <span class="whatsapp-icon">💬</span>
+    <span class="cta-text">Order on WhatsApp</span>
+  </button>
+</div>
+

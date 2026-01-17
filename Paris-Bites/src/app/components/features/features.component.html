@@ -1,0 +1,17 @@
+<section class="features">
+  <div class="container" appScrollAnimation>
+    <h2 class="section-title">Why Paris Bites</h2>
+    <p class="section-subtitle">
+      Experience the difference that quality and care make
+    </p>
+
+    <div class="features-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <div class="feature-icon">{{ feature.icon }}</div>
+        <h3 class="feature-title">{{ feature.title }}</h3>
+        <p class="feature-description">{{ feature.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
