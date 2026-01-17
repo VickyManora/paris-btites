@@ -112,9 +112,9 @@ export class CartService {
     items.forEach((item, index) => {
       const price = parseFloat(item.menuItem.price.replace('₹', ''));
       const itemTotal = price * item.quantity;
-      message += `\n${index + 1}. *${item.menuItem.name}*\n`;
-      message += `   • Quantity: ${item.quantity}\n`;
-      message += `   • Price: ₹${price} × ${item.quantity} = ₹${itemTotal}\n`;
+      message += `\n${index + 1}. 🎂 *${item.menuItem.name}*\n`;
+      message += `   📦 Quantity: ${item.quantity}\n`;
+      message += `   💰 Price: ₹${price} × ${item.quantity} = ₹${itemTotal}\n`;
     });
 
     const total = this.getTotalPrice();
