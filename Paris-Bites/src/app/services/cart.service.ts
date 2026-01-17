@@ -105,42 +105,32 @@ export class CartService {
       return;
     }
 
-    // Build message as plain Unicode string with safe emojis
-    let message = '🛒 ONLINE ORDER\n\n';
-    message += '🛎️ *New Order from Paris Bites Website*\n\n';
-    message += `👤 *Customer Name:* ${customerName}\n\n`;
-    message += '🍫 *Order Details:*\n';
-
-    // Number emojis for items
-    const numberEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
+    // Build message without emojis - plain text only
+    let message = '*ONLINE ORDER*\n';
+    message += '*New Order from Paris Bites Website*\n\n';
+    message += `*Customer Name:* ${customerName}\n\n`;
+    message += '*Order Details:*\n';
 
     items.forEach((item, index) => {
       const price = parseFloat(item.menuItem.price.replace('₹', ''));
       const itemTotal = price * item.quantity;
-      const numberEmoji = index < numberEmojis.length ? numberEmojis[index] : `${index + 1}.`;
-      message += `${numberEmoji} *${item.menuItem.name}*\n`;
-      message += `   🔢 Quantity: ${item.quantity}\n`;
-      message += `   💰 Price: ₹${price} x ${item.quantity} = ₹${itemTotal}\n\n`;
+      message += `\n${index + 1}. *${item.menuItem.name}*\n`;
+      message += `   Quantity: ${item.quantity}\n`;
+      message += `   Price: Rs.${price} x ${item.quantity} = Rs.${itemTotal}\n`;
     });
 
     const total = this.getTotalPrice();
-    message += '➖➖➖➖➖➖➖➖➖\n';
-    message += `🧾 *Total Amount:* ₹${total}\n`;
-    message += '➖➖➖➖➖➖➖➖➖\n\n';
-    message += '📍 *Pickup Location:*\n';
+    message += `\n${'='.repeat(30)}\n`;
+    message += `*Total Amount: Rs.${total}*\n`;
+    message += `${'='.repeat(30)}\n\n`;
+    message += '*Pickup Location:*\n';
     message += 'Paris Bites, Aundh, Pune\n\n';
-    message += '⏰ *Preferred Pickup Time:* _____\n\n';
-    message += '🙏 Thank you for your order!';
+    message += '*Preferred Pickup Time:* _____\n\n';
+    message += 'Thank you for your order!';
 
     // Use wa.me with encodeURIComponent on the FULL message
     const whatsappNumber = '917769983857';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    // Debug: Log to console
-    console.log('=== WhatsApp Message ===');
-    console.log(message);
-    console.log('=== WhatsApp URL ===');
-    console.log(whatsappUrl);
 
     window.open(whatsappUrl, '_blank');
   }
