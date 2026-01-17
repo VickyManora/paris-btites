@@ -8,12 +8,7 @@
   background: linear-gradient(to top, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
   backdrop-filter: blur(10px);
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
-  display: none; // Hidden on mobile (order summary bar will show instead)
-
-  // Only show on desktop when no cart items
-  @media (min-width: 769px) {
-    display: block;
-  }
+  display: none; // Hidden completely - not needed anymore
 }
 
 .sticky-cta-button {
