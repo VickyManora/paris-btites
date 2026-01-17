@@ -105,25 +105,25 @@ export class CartService {
       return '';
     }
 
-    let message = '🍫 *New Order from Paris Bites Website*\n\n';
+    let message = '🍰 *New Order from Paris Bites Website*\n\n';
     message += `👤 *Customer Name:* ${customerName}\n\n`;
-    message += '📋 *Order Details:*\n';
+    message += '📝 *Order Details:*\n';
 
     items.forEach((item, index) => {
       const price = parseFloat(item.menuItem.price.replace('₹', ''));
       const itemTotal = price * item.quantity;
-      message += `\n${index + 1}. 🎂 *${item.menuItem.name}*\n`;
-      message += `   📦 Quantity: ${item.quantity}\n`;
-      message += `   💰 Price: ₹${price} × ${item.quantity} = ₹${itemTotal}\n`;
+      message += `\n${index + 1}. 🍨 *${item.menuItem.name}*\n`;
+      message += `   ▪️ Quantity: ${item.quantity}\n`;
+      message += `   ▪️ Price: ₹${price} × ${item.quantity} = ₹${itemTotal}\n`;
     });
 
     const total = this.getTotalPrice();
     message += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-    message += `💵 *Total Amount: ₹${total}*\n`;
+    message += `💰 *Total Amount: ₹${total}*\n`;
     message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
     message += `📍 *Pickup Location:*\n`;
     message += `Paris Bites, Aundh, Pune\n\n`;
-    message += `🕐 *Preferred Pickup Time:* _____\n\n`;
+    message += `⏰ *Preferred Pickup Time:* _____\n\n`;
     message += `Thank you! 🙏`;
 
     return encodeURIComponent(message);
