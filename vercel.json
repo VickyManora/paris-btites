@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "buildCommand": "cd Paris-Bites && npm install && npm run build",
+  "outputDirectory": "Paris-Bites/dist/Paris-Bites/browser",
+  "installCommand": "cd Paris-Bites && npm install",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
