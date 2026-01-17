@@ -99,13 +99,13 @@ export class CartService {
     }, 0);
   }
 
-  generateWhatsAppMessage(customerName: string): string {
+  openWhatsAppOrder(customerName: string): void {
     const items = this.cartItems.value;
     if (items.length === 0) {
-      return '';
+      return;
     }
 
-    // Using safe, universally supported emojis for WhatsApp
+    // Build message as plain Unicode string with safe emojis
     let message = '🛒 ONLINE ORDER\n\n';
     message += '🛎️ *New Order from Paris Bites Website*\n\n';
     message += `👤 *Customer Name:* ${customerName}\n\n`;
@@ -132,17 +132,13 @@ export class CartService {
     message += '⏰ *Preferred Pickup Time:* _____\n\n';
     message += '🙏 Thank you for your order!';
 
-    return encodeURIComponent(message);
-  }
-
-  openWhatsAppOrder(customerName: string): void {
-    const message = this.generateWhatsAppMessage(customerName);
+    // Use wa.me with encodeURIComponent on the FULL message
     const whatsappNumber = '917769983857';
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    // Debug: Log the decoded message to console
-    console.log('=== WhatsApp Message (Decoded) ===');
-    console.log(decodeURIComponent(message));
+    // Debug: Log to console
+    console.log('=== WhatsApp Message ===');
+    console.log(message);
     console.log('=== WhatsApp URL ===');
     console.log(whatsappUrl);
 
