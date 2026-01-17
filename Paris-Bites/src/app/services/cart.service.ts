@@ -105,26 +105,32 @@ export class CartService {
       return '';
     }
 
-    let message = '🍰 *New Order from Paris Bites Website*\n\n';
+    // Using safe, universally supported emojis for WhatsApp
+    let message = '🛒 ONLINE ORDER\n\n';
+    message += '🛎️ *New Order from Paris Bites Website*\n\n';
     message += `👤 *Customer Name:* ${customerName}\n\n`;
-    message += '📝 *Order Details:*\n';
+    message += '🍫 *Order Details:*\n';
+
+    // Number emojis for items
+    const numberEmojis = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣', '🔟'];
 
     items.forEach((item, index) => {
       const price = parseFloat(item.menuItem.price.replace('₹', ''));
       const itemTotal = price * item.quantity;
-      message += `\n${index + 1}. 🍨 *${item.menuItem.name}*\n`;
-      message += `   ▪️ Quantity: ${item.quantity}\n`;
-      message += `   ▪️ Price: ₹${price} × ${item.quantity} = ₹${itemTotal}\n`;
+      const numberEmoji = index < numberEmojis.length ? numberEmojis[index] : `${index + 1}.`;
+      message += `${numberEmoji} *${item.menuItem.name}*\n`;
+      message += `   🔢 Quantity: ${item.quantity}\n`;
+      message += `   💰 Price: ₹${price} x ${item.quantity} = ₹${itemTotal}\n\n`;
     });
 
     const total = this.getTotalPrice();
-    message += `\n━━━━━━━━━━━━━━━━━━━━\n`;
-    message += `💰 *Total Amount: ₹${total}*\n`;
-    message += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-    message += `📍 *Pickup Location:*\n`;
-    message += `Paris Bites, Aundh, Pune\n\n`;
-    message += `⏰ *Preferred Pickup Time:* _____\n\n`;
-    message += `Thank you! 🙏`;
+    message += '➖➖➖➖➖➖➖➖➖\n';
+    message += `🧾 *Total Amount:* ₹${total}\n`;
+    message += '➖➖➖➖➖➖➖➖➖\n\n';
+    message += '📍 *Pickup Location:*\n';
+    message += 'Paris Bites, Aundh, Pune\n\n';
+    message += '⏰ *Preferred Pickup Time:* _____\n\n';
+    message += '🙏 Thank you for your order!';
 
     return encodeURIComponent(message);
   }
@@ -133,6 +139,13 @@ export class CartService {
     const message = this.generateWhatsAppMessage(customerName);
     const whatsappNumber = '917769983857';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    // Debug: Log the decoded message to console
+    console.log('=== WhatsApp Message (Decoded) ===');
+    console.log(decodeURIComponent(message));
+    console.log('=== WhatsApp URL ===');
+    console.log(whatsappUrl);
+
     window.open(whatsappUrl, '_blank');
   }
 }
