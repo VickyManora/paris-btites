@@ -11,7 +11,7 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 })
 export class LocationComponent {
   openWhatsApp(): void {
-    window.open('https://wa.me/917769983857', '_blank');
+    window.open('https://wa.me/917447360809', '_blank');
   }
 
   openInstagram(): void {

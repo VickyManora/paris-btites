@@ -129,7 +129,7 @@ export class CartService {
     message += 'Thank you for your order!';
 
     // Use wa.me with encodeURIComponent on the FULL message
-    const whatsappNumber = '917769983857';
+    const whatsappNumber = '917447360809';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, '_blank');
