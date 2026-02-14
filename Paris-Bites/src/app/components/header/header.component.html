@@ -1,21 +1,17 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="container">
     <div class="header-content">
-      <!-- Mobile Hamburger Menu (Left) -->
+      <!-- Logo (Centered on Mobile) -->
+      <div class="logo">
+        <img src="assets/paris-bites-logo.jpg" alt="Paris Bites - Chocolaterie & Desserts" class="logo-image">
+      </div>
+
+      <!-- Mobile Hamburger Menu (Right) -->
       <button class="hamburger-btn" (click)="toggleMobileMenu()" [class.active]="isMobileMenuOpen" aria-label="Toggle menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-
-      <!-- Logo (Centered on Mobile) -->
-      <div class="logo">
-        <img src="assets/paris_bites.jpeg" alt="Paris Bites Logo" class="logo-image">
-        <div class="logo-text-wrapper">
-          <h1 class="logo-text">Paris Bites</h1>
-          <p class="logo-subtitle">Chocolaterie & Desserts</p>
-        </div>
-      </div>
 
       <!-- Desktop Navigation -->
       <div class="header-right">
@@ -42,8 +38,7 @@
 <nav class="mobile-menu" [class.active]="isMobileMenuOpen">
   <div class="mobile-menu-header">
     <div class="mobile-menu-brand">
-      <img src="assets/paris_bites.jpeg" alt="Paris Bites" class="mobile-menu-logo">
-      <h2 class="mobile-menu-title">Paris Bites</h2>
+      <img src="assets/paris-bites-logo.jpg" alt="Paris Bites - Chocolaterie & Desserts" class="mobile-menu-logo">
     </div>
     <button class="close-btn" (click)="toggleMobileMenu()" aria-label="Close menu">✕</button>
   </div>

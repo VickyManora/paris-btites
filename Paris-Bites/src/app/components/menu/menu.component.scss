@@ -162,11 +162,11 @@
   background: linear-gradient(135deg, var(--color-cream), #ffe8f0);
 
   @media (max-width: 768px) {
-    height: 220px; // Reduced by 12% for better mobile comparison
+    height: 280px; // Increased for better bowl visibility
   }
 
   @media (max-width: 640px) {
-    height: 210px; // Further reduced for smaller screens
+    height: 360px; // Increased for smaller screens
   }
 
   img {
@@ -480,7 +480,7 @@
 /* MINI CARD - Smaller size */
 .mini-card {
   .menu-card-image {
-    height: 180px;
+    height: 200px;
   }
 
   .menu-card-content {
@@ -516,11 +516,11 @@
 /* Mobile Responsive */
 @media (max-width: 640px) {
   .menu-card-image {
-    height: 200px;
+    height: 360px;
   }
 
   .mini-card .menu-card-image {
-    height: 160px;
+    height: 200px;
   }
 
   .mini-category {

@@ -1,131 +1,72 @@
 import { MenuItem } from '../models/menu-item.model';
 
 export const MENU_ITEMS: MenuItem[] = [
-  // REGULAR BOWLS
   {
     id: 1,
-    name: 'Death by Chocolate Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
+    name: 'Death by Chocolate',
+    image: 'assets/menu/death-by-chocolate.jpg',
     shortDescription: 'Rich dark chocolate bowl with brownie chunks, chocolate sauce & whipped cream',
-    price: '₹180',
+    price: '₹119',
     size: 'REGULAR',
     badge: 'BESTSELLER'
   },
   {
     id: 2,
-    name: 'Nutella Bliss Bowl',
-    image: 'assets/menu/nutella-bliss.jpg',
-    shortDescription: 'Creamy Nutella base with hazelnut crunch and chocolate drizzle',
-    price: '₹160',
+    name: 'Oreo Licious Bowl',
+    image: 'assets/menu/oreo-licious.jpg',
+    shortDescription: 'Crushed Oreos with vanilla cream and chocolate fudge',
+    price: '₹129',
     size: 'REGULAR',
     badge: 'MOST_LOVED'
   },
   {
     id: 3,
-    name: 'Biscoff Delight Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Biscoff cookie butter bowl with caramel swirls and cookie crumbles',
-    price: '₹150',
+    name: 'KitKat Break Bowl',
+    image: 'assets/menu/kitkat-break.jpg',
+    shortDescription: 'Crunchy KitKat pieces with chocolate mousse and caramel',
+    price: '₹139',
+    size: 'REGULAR'
+  },
+  {
+    id: 4,
+    name: 'Tiramisu Indulgence',
+    image: 'assets/menu/tiramisu-indulgence.jpg',
+    shortDescription: 'Coffee-soaked ladyfingers with mascarpone cream and cocoa dust',
+    price: '₹159',
     size: 'REGULAR',
     badge: 'SIGNATURE'
   },
   {
-    id: 4,
-    name: 'Oreo Licious Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Crushed Oreos with vanilla cream and chocolate fudge',
-    price: '₹140',
-    size: 'REGULAR'
-  },
-  {
     id: 5,
-    name: 'KitKat Break Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Crunchy KitKat pieces with chocolate mousse and caramel',
-    price: '₹150',
+    name: 'Strawberry Chocolate Bliss',
+    image: 'assets/menu/strawberry-chocolate-bliss.jpg',
+    shortDescription: 'Fresh strawberries with chocolate cream and berry compote',
+    price: '₹169',
     size: 'REGULAR'
   },
   {
     id: 6,
-    name: 'Blueberry Bliss Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Fresh blueberries with vanilla cream and white chocolate',
-    price: '₹120',
+    name: 'Biscoff Delight Bowl',
+    image: 'assets/menu/biscoff-delight.jpg',
+    shortDescription: 'Biscoff cookie butter bowl with caramel swirls and cookie crumbles',
+    price: '₹179',
     size: 'REGULAR'
   },
   {
     id: 7,
-    name: 'Strawberry Bliss Bowl',
-    image: 'assets/menu/strawberry-bowl.jpg',
-    shortDescription: 'Fresh strawberries with cream cheese and berry compote',
-    price: '₹120',
+    name: 'Nutella Bliss Bowl',
+    image: 'assets/menu/nutella-bliss-new.jpg',
+    shortDescription: 'Creamy Nutella base with hazelnut crunch and chocolate drizzle',
+    price: '₹179',
     size: 'REGULAR'
   },
   {
     id: 8,
-    name: 'Rose Pistachio Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Delicate rose-flavored cream with crushed pistachios and rose petals',
-    price: '₹130',
+    name: 'Blueberry Chocolate Bliss',
+    image: 'assets/menu/blueberry-chocolate-bliss.jpg',
+    shortDescription: 'Fresh blueberries with chocolate cream and white chocolate',
+    price: '₹179',
     size: 'REGULAR'
-  },
-  {
-    id: 9,
-    name: 'Tiramisu Bliss Bowl',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Coffee-soaked ladyfingers with mascarpone cream and cocoa dust',
-    price: '₹160',
-    size: 'REGULAR'
-  },
-
-  // MINI BOWLS
-  {
-    id: 10,
-    name: 'Nutella Bliss Mini',
-    image: 'assets/menu/nutella-bliss.jpg',
-    shortDescription: 'Creamy Nutella base with chocolate drizzle',
-    price: '₹69',
-    size: 'MINI'
-  },
-  {
-    id: 11,
-    name: 'Oreo Delight Mini',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Crushed Oreos with vanilla cream',
-    price: '₹69',
-    size: 'MINI'
-  },
-  {
-    id: 12,
-    name: 'Chocolate Fudge Mini',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Rich chocolate fudge with brownie bits',
-    price: '₹79',
-    size: 'MINI'
-  },
-  {
-    id: 13,
-    name: 'Strawberry Dream Mini',
-    image: 'assets/menu/strawberry-bowl.jpg',
-    shortDescription: 'Fresh strawberries with cream',
-    price: '₹69',
-    size: 'MINI'
-  },
-  {
-    id: 14,
-    name: 'Biscoff Crunch Mini',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Biscoff cookie butter with caramel',
-    price: '₹79',
-    size: 'MINI'
-  },
-  {
-    id: 15,
-    name: 'KitKat Treat Mini',
-    image: 'assets/menu/berry-cheesecake.jpg',
-    shortDescription: 'Crunchy KitKat with chocolate mousse',
-    price: '₹79',
-    size: 'MINI'
   }
 ];
 
