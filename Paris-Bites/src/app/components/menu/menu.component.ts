@@ -74,10 +74,6 @@ export class MenuComponent {
     return this.menuItems.filter(item => item.size === 'REGULAR');
   }
 
-  get miniBowls(): MenuItem[] {
-    return this.menuItems.filter(item => item.size === 'MINI');
-  }
-
   getBadgeText(badge: string | null | undefined): string {
     if (!badge) return '';
 

@@ -128,11 +128,14 @@
 }
 
 .menu-card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: var(--transition-smooth);
+  height: 100%; // Ensure all cards have same height
 
   // Prevent blue flash on tap/click
   -webkit-tap-highlight-color: transparent;
@@ -178,6 +181,9 @@
 }
 
 .menu-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1; // Allow content to grow and fill available space
   padding: var(--spacing-md);
 }
 
@@ -243,7 +249,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-top: var(--spacing-md);
+  margin-top: auto; // Push to bottom of card
+  padding-top: var(--spacing-md); // Add some spacing from description
 }
 
 .price-display {

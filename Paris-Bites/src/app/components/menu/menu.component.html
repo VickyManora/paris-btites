@@ -8,9 +8,9 @@
       🔥 Today's Special: {{ todaysSpecial }}
     </div>
 
-    <!-- REGULAR BOWLS -->
+    <!-- BOWLS -->
     <div class="menu-category">
-      <h3 class="category-title">Regular Bowls</h3>
+      <h3 class="category-title">Our Bowls</h3>
       <p class="portion-info">Serves 1 | Rich & filling</p>
 
       <!-- First Time Guidance -->
@@ -34,53 +34,6 @@
                 {{ getBadgeText(item.badge) }}
               </span>
             </div>
-            <p class="menu-card-description">{{ item.shortDescription }}</p>
-
-            <!-- Price and Order Controls -->
-            <div class="price-and-order">
-              <div class="price-display">{{ item.price }}</div>
-
-              <!-- Order Controls - Zomato Style -->
-              <div class="order-controls">
-                <!-- Show "Add" button when item NOT in cart -->
-                <button class="add-btn" *ngIf="!isItemInCart(item.id)" (click)="addToCart(item)">
-                  ADD
-                </button>
-
-                <!-- Show quantity selector when item IS in cart -->
-                <div class="quantity-selector" *ngIf="isItemInCart(item.id)">
-                  <button class="qty-btn" (click)="decrementQuantity(item.id)">
-                    −
-                  </button>
-                  <span class="qty-display">{{ getItemQuantity(item.id) }}</span>
-                  <button class="qty-btn" (click)="incrementQuantity(item.id)">
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MINI BOWLS -->
-    <div class="menu-category mini-category">
-      <div class="category-header">
-        <h3 class="category-title">Mini Bowls</h3>
-        <p class="category-subtitle">Same taste. Smaller size. Friendly price.</p>
-        <p class="mini-comparison">Mini = Same recipe • Less quantity • Lower price</p>
-        <p class="category-description">Perfect when you want dessert, not heaviness 🍫</p>
-      </div>
-      <p class="portion-info">Light portion | Quick treat</p>
-      <div class="menu-grid mini-grid">
-        <div class="menu-card mini-card" *ngFor="let item of miniBowls">
-          <div class="menu-card-image">
-            <img [src]="item.image" [alt]="item.name" loading="lazy">
-            <div class="mini-badge">MINI</div>
-          </div>
-          <div class="menu-card-content">
-            <h3 class="menu-card-title">{{ item.name }}</h3>
             <p class="menu-card-description">{{ item.shortDescription }}</p>
 
             <!-- Price and Order Controls -->
