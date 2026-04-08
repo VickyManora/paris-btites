@@ -75,5 +75,23 @@ export const MENU_ITEMS: MenuItem[] = [
     price: '₹229',
     size: 'REGULAR',
     category: 'PREMIUM'
+  },
+  {
+    id: 101,
+    name: '2 Signature Bowls Combo',
+    image: '',
+    shortDescription: 'Pick any 2 bowls from our Signature collection',
+    price: '₹299',
+    size: 'REGULAR',
+    category: 'COMBO'
+  },
+  {
+    id: 102,
+    name: '2 Premium Bowls Combo',
+    image: '',
+    shortDescription: 'Pick any 2 bowls from our Premium collection',
+    price: '₹399',
+    size: 'REGULAR',
+    category: 'COMBO'
   }
 ];

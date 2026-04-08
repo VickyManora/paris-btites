@@ -65,6 +65,38 @@
       </div>
     </div>
 
+    <!-- COMBO DEALS -->
+    <div class="menu-category combo-section">
+      <h3 class="category-title">Combo Deals</h3>
+      <p class="portion-info">Save more when you share</p>
+
+      <div class="combo-grid">
+        <div class="combo-card" *ngFor="let item of combos"
+             [ngClass]="{'combo-signature': item.id === 101, 'combo-premium': item.id === 102}">
+          <div class="combo-icon">
+            <span class="combo-bowl-count">2</span>
+          </div>
+          <div class="combo-content">
+            <h3 class="combo-title">{{ item.name }}</h3>
+            <p class="combo-description">{{ item.shortDescription }}</p>
+            <div class="combo-price-row">
+              <div class="combo-price">{{ item.price }}</div>
+              <div class="order-controls">
+                <button class="add-btn" *ngIf="!isItemInCart(item.id)" (click)="addToCart(item)">
+                  ADD
+                </button>
+                <div class="quantity-selector" *ngIf="isItemInCart(item.id)">
+                  <button class="qty-btn" (click)="decrementQuantity(item.id)">−</button>
+                  <span class="qty-display">{{ getItemQuantity(item.id) }}</span>
+                  <button class="qty-btn" (click)="incrementQuantity(item.id)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- PREMIUM BOWLS -->
     <div class="menu-category">
       <h3 class="category-title">Premium Bowls</h3>

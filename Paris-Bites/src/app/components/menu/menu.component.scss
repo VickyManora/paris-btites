@@ -427,6 +427,121 @@
   }
 }
 
+/* COMBO DEALS SECTION */
+.combo-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.combo-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--spacing-md);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.combo-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  @media (max-width: 640px) {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+}
+
+.combo-signature {
+  border-color: rgba(255, 168, 0, 0.3);
+  background: linear-gradient(135deg, #fffbf0 0%, var(--color-white) 100%);
+}
+
+.combo-premium {
+  border-color: rgba(155, 89, 182, 0.3);
+  background: linear-gradient(135deg, #f9f0ff 0%, var(--color-white) 100%);
+}
+
+.combo-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  box-shadow: 0 4px 12px rgba(248, 180, 195, 0.3);
+
+  @media (max-width: 640px) {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+.combo-bowl-count {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-white);
+
+  @media (max-width: 640px) {
+    font-size: 1.5rem;
+  }
+}
+
+.combo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.combo-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 0.25rem 0;
+
+  @media (max-width: 640px) {
+    font-size: 1.05rem;
+  }
+}
+
+.combo-description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin: 0 0 0.75rem 0;
+}
+
+.combo-price-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.combo-price {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #5A3A2E;
+
+  @media (max-width: 640px) {
+    font-size: 1.2rem;
+  }
+}
+
 /* MINI BOWLS SPECIFIC STYLING */
 .mini-category {
   background: linear-gradient(135deg, #fff5f8 0%, var(--color-cream) 100%);
