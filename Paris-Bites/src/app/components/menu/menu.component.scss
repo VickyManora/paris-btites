@@ -542,6 +542,16 @@
   }
 }
 
+.combo-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2E7D32;
+  background: rgba(76, 175, 80, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  letter-spacing: 0.3px;
+}
+
 /* MINI BOWLS SPECIFIC STYLING */
 .mini-category {
   background: linear-gradient(135deg, #fff5f8 0%, var(--color-cream) 100%);

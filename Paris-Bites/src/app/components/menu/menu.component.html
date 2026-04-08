@@ -68,29 +68,33 @@
     <!-- COMBO DEALS -->
     <div class="menu-category combo-section">
       <h3 class="category-title">Combo Deals</h3>
-      <p class="portion-info">Save more when you share</p>
+      <p class="portion-info">Auto-applied when you add 2 bowls from the same category</p>
 
       <div class="combo-grid">
-        <div class="combo-card" *ngFor="let item of combos"
-             [ngClass]="{'combo-signature': item.id === 101, 'combo-premium': item.id === 102}">
+        <div class="combo-card combo-signature">
           <div class="combo-icon">
             <span class="combo-bowl-count">2</span>
           </div>
           <div class="combo-content">
-            <h3 class="combo-title">{{ item.name }}</h3>
-            <p class="combo-description">{{ item.shortDescription }}</p>
+            <h3 class="combo-title">2 Signature Bowls</h3>
+            <p class="combo-description">Pick any 2 from our Signature collection</p>
             <div class="combo-price-row">
-              <div class="combo-price">{{ item.price }}</div>
-              <div class="order-controls">
-                <button class="add-btn" *ngIf="!isItemInCart(item.id)" (click)="addToCart(item)">
-                  ADD
-                </button>
-                <div class="quantity-selector" *ngIf="isItemInCart(item.id)">
-                  <button class="qty-btn" (click)="decrementQuantity(item.id)">−</button>
-                  <span class="qty-display">{{ getItemQuantity(item.id) }}</span>
-                  <button class="qty-btn" (click)="incrementQuantity(item.id)">+</button>
-                </div>
-              </div>
+              <div class="combo-price">₹299</div>
+              <span class="combo-tag">Auto-applied</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="combo-card combo-premium">
+          <div class="combo-icon">
+            <span class="combo-bowl-count">2</span>
+          </div>
+          <div class="combo-content">
+            <h3 class="combo-title">2 Premium Bowls</h3>
+            <p class="combo-description">Pick any 2 from our Premium collection</p>
+            <div class="combo-price-row">
+              <div class="combo-price">₹399</div>
+              <span class="combo-tag">Auto-applied</span>
             </div>
           </div>
         </div>

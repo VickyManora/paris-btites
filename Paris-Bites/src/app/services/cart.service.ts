@@ -99,6 +99,52 @@ export class CartService {
     }, 0);
   }
 
+  // Combo pricing: 2 Signature Bowls = ₹299, 2 Premium Bowls = ₹399
+  private readonly SIGNATURE_COMBO_PRICE = 299;
+  private readonly PREMIUM_COMBO_PRICE = 399;
+
+  private getExpandedPrices(category: string): number[] {
+    const prices: number[] = [];
+    this.cartItems.value.forEach(item => {
+      if (item.menuItem.category === category) {
+        const price = parseFloat(item.menuItem.price.replace('₹', ''));
+        for (let i = 0; i < item.quantity; i++) {
+          prices.push(price);
+        }
+      }
+    });
+    return prices.sort((a, b) => b - a);
+  }
+
+  private calculateCategoryCombo(prices: number[], comboPrice: number): { combos: number; discount: number } {
+    let combos = 0;
+    let discount = 0;
+    for (let i = 0; i + 1 < prices.length; i += 2) {
+      const pairSum = prices[i] + prices[i + 1];
+      if (pairSum > comboPrice) {
+        combos++;
+        discount += pairSum - comboPrice;
+      }
+    }
+    return { combos, discount };
+  }
+
+  getComboDetails(): { signatureCombos: number; premiumCombos: number; totalDiscount: number } {
+    const sigPrices = this.getExpandedPrices('SIGNATURE');
+    const premPrices = this.getExpandedPrices('PREMIUM');
+    const sigResult = this.calculateCategoryCombo(sigPrices, this.SIGNATURE_COMBO_PRICE);
+    const premResult = this.calculateCategoryCombo(premPrices, this.PREMIUM_COMBO_PRICE);
+    return {
+      signatureCombos: sigResult.combos,
+      premiumCombos: premResult.combos,
+      totalDiscount: sigResult.discount + premResult.discount
+    };
+  }
+
+  getDiscountedTotal(): number {
+    return this.getTotalPrice() - this.getComboDetails().totalDiscount;
+  }
+
   openWhatsAppOrder(customerName: string): void {
     const items = this.cartItems.value;
     if (items.length === 0) {
@@ -119,9 +165,24 @@ export class CartService {
       message += `   Price: Rs.${price} x ${item.quantity} = Rs.${itemTotal}\n`;
     });
 
-    const total = this.getTotalPrice();
+    const subtotal = this.getTotalPrice();
+    const combo = this.getComboDetails();
+    const discountedTotal = this.getDiscountedTotal();
+
     message += `\n${'='.repeat(30)}\n`;
-    message += `*Total Amount: Rs.${total}*\n`;
+    message += `*Subtotal: Rs.${subtotal}*\n`;
+
+    if (combo.totalDiscount > 0) {
+      if (combo.signatureCombos > 0) {
+        message += `Signature Combo x${combo.signatureCombos} applied\n`;
+      }
+      if (combo.premiumCombos > 0) {
+        message += `Premium Combo x${combo.premiumCombos} applied\n`;
+      }
+      message += `*Combo Discount: -Rs.${combo.totalDiscount}*\n`;
+    }
+
+    message += `*Total Amount: Rs.${discountedTotal}*\n`;
     message += `${'='.repeat(30)}\n\n`;
     message += '*Pickup Location:*\n';
     message += 'Paris Bites, Aundh, Pune\n\n';

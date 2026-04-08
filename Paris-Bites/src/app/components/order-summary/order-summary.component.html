@@ -3,7 +3,7 @@
   <div class="summary-content">
     <div class="summary-info">
       <span class="item-count">{{ totalItems }} {{ totalItems === 1 ? 'item' : 'items' }}</span>
-      <span class="total-price">₹{{ totalPrice }}</span>
+      <span class="total-price">₹{{ discountedTotal }}</span>
     </div>
     <button class="view-order-btn" (click)="toggleCart()">
       <span class="btn-icon">🛒</span>
@@ -68,9 +68,21 @@
         <span class="total-label">Subtotal</span>
         <span class="total-value">₹{{ totalPrice }}</span>
       </div>
+      <div class="combo-discount-row" *ngIf="comboDiscount > 0">
+        <div class="combo-applied" *ngIf="signatureCombos > 0">
+          Signature Combo x{{ signatureCombos }} applied
+        </div>
+        <div class="combo-applied" *ngIf="premiumCombos > 0">
+          Premium Combo x{{ premiumCombos }} applied
+        </div>
+        <div class="total-row discount-row">
+          <span class="total-label discount-label">Combo Discount</span>
+          <span class="total-value discount-value">-₹{{ comboDiscount }}</span>
+        </div>
+      </div>
       <div class="total-row grand-total">
         <span class="total-label">Total</span>
-        <span class="total-value">₹{{ totalPrice }}</span>
+        <span class="total-value">₹{{ discountedTotal }}</span>
       </div>
     </div>
 

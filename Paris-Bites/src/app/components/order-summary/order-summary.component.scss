@@ -390,6 +390,34 @@
   font-weight: 700;
 }
 
+/* Combo Discount */
+.combo-discount-row {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.08), rgba(76, 175, 80, 0.04));
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.combo-applied {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2E7D32;
+  padding: 0.15rem 0;
+}
+
+.discount-row {
+  padding: 0.25rem 0 0;
+}
+
+.discount-label {
+  color: #2E7D32;
+}
+
+.discount-value {
+  color: #2E7D32;
+  font-weight: 800;
+}
+
 /* Trust Messages */
 .trust-messages {
   background: linear-gradient(135deg, rgba(248, 180, 195, 0.1), rgba(212, 165, 116, 0.1));

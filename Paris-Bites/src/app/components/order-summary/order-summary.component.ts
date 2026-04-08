@@ -15,6 +15,10 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
   cartItems: CartItem[] = [];
   totalItems: number = 0;
   totalPrice: number = 0;
+  discountedTotal: number = 0;
+  comboDiscount: number = 0;
+  signatureCombos: number = 0;
+  premiumCombos: number = 0;
   showCart: boolean = false;
   private cartSubscription?: Subscription;
 
@@ -32,6 +36,11 @@ export class OrderSummaryComponent implements OnInit, OnDestroy {
       this.cartItems = items;
       this.totalItems = this.cartService.getTotalItems();
       this.totalPrice = this.cartService.getTotalPrice();
+      const combo = this.cartService.getComboDetails();
+      this.signatureCombos = combo.signatureCombos;
+      this.premiumCombos = combo.premiumCombos;
+      this.comboDiscount = combo.totalDiscount;
+      this.discountedTotal = this.cartService.getDiscountedTotal();
     });
   }
 

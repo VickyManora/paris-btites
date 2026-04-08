@@ -82,10 +82,6 @@ export class MenuComponent {
     return this.menuItems.filter(item => item.size === 'REGULAR' && item.category === 'PREMIUM');
   }
 
-  get combos(): MenuItem[] {
-    return this.menuItems.filter(item => item.category === 'COMBO');
-  }
-
   getBadgeText(badge: string | null | undefined): string {
     if (!badge) return '';
 
