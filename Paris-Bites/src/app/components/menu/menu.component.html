@@ -8,20 +8,70 @@
       🔥 Today's Special: {{ todaysSpecial }}
     </div>
 
-    <!-- BOWLS -->
+    <!-- First Time Guidance -->
+    <div class="first-time-guide">
+      <p class="first-time-text">
+        <span class="first-time-label">First time at Paris Bites?</span>
+        <span class="first-time-recommendation">👉 Start with Nutella Bliss or Death by Chocolate</span>
+      </p>
+    </div>
+
+    <!-- SIGNATURE BOWLS -->
     <div class="menu-category">
-      <h3 class="category-title">Our Bowls</h3>
+      <h3 class="category-title">Signature Bowls</h3>
       <p class="portion-info">Serves 1 | Rich & filling</p>
 
-      <!-- First Time Guidance -->
-      <div class="first-time-guide">
-        <p class="first-time-text">
-          <span class="first-time-label">First time at Paris Bites?</span>
-          <span class="first-time-recommendation">👉 Start with Nutella Bliss or Death by Chocolate</span>
-        </p>
-      </div>
       <div class="menu-grid">
-        <div class="menu-card" *ngFor="let item of regularBowls">
+        <div class="menu-card" *ngFor="let item of signatureBowls">
+          <div class="menu-card-image">
+            <img [src]="item.image" [alt]="item.name" loading="lazy">
+          </div>
+          <div class="menu-card-content">
+            <div class="title-with-badge">
+              <h3 class="menu-card-title">{{ item.name }}</h3>
+              <span *ngIf="item.badge"
+                    class="recommendation-badge"
+                    [ngClass]="getBadgeClass(item.badge)">
+                {{ getBadgeText(item.badge) }}
+              </span>
+            </div>
+            <p class="menu-card-description">{{ item.shortDescription }}</p>
+
+            <!-- Price and Order Controls -->
+            <div class="price-and-order">
+              <div class="price-display">{{ item.price }}</div>
+
+              <!-- Order Controls - Zomato Style -->
+              <div class="order-controls">
+                <!-- Show "Add" button when item NOT in cart -->
+                <button class="add-btn" *ngIf="!isItemInCart(item.id)" (click)="addToCart(item)">
+                  ADD
+                </button>
+
+                <!-- Show quantity selector when item IS in cart -->
+                <div class="quantity-selector" *ngIf="isItemInCart(item.id)">
+                  <button class="qty-btn" (click)="decrementQuantity(item.id)">
+                    −
+                  </button>
+                  <span class="qty-display">{{ getItemQuantity(item.id) }}</span>
+                  <button class="qty-btn" (click)="incrementQuantity(item.id)">
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PREMIUM BOWLS -->
+    <div class="menu-category">
+      <h3 class="category-title">Premium Bowls</h3>
+      <p class="portion-info">Serves 1 | Indulgent & luxurious</p>
+
+      <div class="menu-grid">
+        <div class="menu-card" *ngFor="let item of premiumBowls">
           <div class="menu-card-image">
             <img [src]="item.image" [alt]="item.name" loading="lazy">
           </div>
@@ -65,4 +115,3 @@
     </div>
   </div>
 </section>
-

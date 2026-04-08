@@ -74,6 +74,14 @@ export class MenuComponent {
     return this.menuItems.filter(item => item.size === 'REGULAR');
   }
 
+  get signatureBowls(): MenuItem[] {
+    return this.menuItems.filter(item => item.size === 'REGULAR' && item.category === 'SIGNATURE');
+  }
+
+  get premiumBowls(): MenuItem[] {
+    return this.menuItems.filter(item => item.size === 'REGULAR' && item.category === 'PREMIUM');
+  }
+
   getBadgeText(badge: string | null | undefined): string {
     if (!badge) return '';
 
