@@ -6,7 +6,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Death by Chocolate',
     image: 'assets/menu/death-by-chocolate.jpg',
     shortDescription: 'Rich dark chocolate bowl with brownie chunks, chocolate sauce & whipped cream',
-    price: '₹99',
+    price: '₹149',
     size: 'REGULAR',
     category: 'SIGNATURE',
     badge: 'BESTSELLER'
@@ -16,7 +16,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Oreo Licious Bowl',
     image: 'assets/menu/oreo-licious.jpg',
     shortDescription: 'Crushed Oreos with vanilla cream and chocolate fudge',
-    price: '₹109',
+    price: '₹159',
     size: 'REGULAR',
     category: 'SIGNATURE',
     badge: 'MOST_LOVED'
@@ -26,7 +26,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'KitKat Break Bowl',
     image: 'assets/menu/kitkat-break.jpg',
     shortDescription: 'Crunchy KitKat pieces with chocolate mousse and caramel',
-    price: '₹119',
+    price: '₹169',
     size: 'REGULAR',
     category: 'SIGNATURE'
   },
@@ -35,16 +35,16 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Strawberry Chocolate Bliss',
     image: 'assets/menu/strawberry-chocolate-bliss.jpg',
     shortDescription: 'Fresh strawberries with chocolate cream and berry compote',
-    price: '₹129',
+    price: '₹219',
     size: 'REGULAR',
-    category: 'SIGNATURE'
+    category: 'PREMIUM'
   },
   {
     id: 5,
     name: 'Tiramisu Indulgence',
     image: 'assets/menu/tiramisu-indulgence.jpg',
     shortDescription: 'Coffee-soaked ladyfingers with mascarpone cream and cocoa dust',
-    price: '₹149',
+    price: '₹199',
     size: 'REGULAR',
     category: 'PREMIUM',
     badge: 'SIGNATURE'
@@ -54,7 +54,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Biscoff Delight Bowl',
     image: 'assets/menu/biscoff-delight.jpg',
     shortDescription: 'Biscoff cookie butter bowl with caramel swirls and cookie crumbles',
-    price: '₹149',
+    price: '₹229',
     size: 'REGULAR',
     category: 'PREMIUM'
   },
@@ -63,7 +63,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Nutella Bliss Bowl',
     image: 'assets/menu/nutella-bliss-new.jpg',
     shortDescription: 'Creamy Nutella base with hazelnut crunch and chocolate drizzle',
-    price: '₹149',
+    price: '₹239',
     size: 'REGULAR',
     category: 'PREMIUM'
   },
@@ -72,7 +72,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: 'Blueberry Chocolate Bliss',
     image: 'assets/menu/blueberry-chocolate-bliss.jpg',
     shortDescription: 'Fresh blueberries with chocolate cream and white chocolate',
-    price: '₹149',
+    price: '₹229',
     size: 'REGULAR',
     category: 'PREMIUM'
   }
